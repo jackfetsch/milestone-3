@@ -7,52 +7,16 @@ output: html_document
 
 [Link](https://github.com/jackfetsch/milestone-3) to My Repo.
 
-```{r setup, include=FALSE}
+## Two Data Sources
 
-# Calling all of the libraries that I might use
+### Illinois Board of Elections
 
-library(tidyverse)
-library(readxl)
-library(janitor)
-library(gt)
-library(rvest)
-```
+The Illinois Board of Elections is the agency that is in charge of arranging the elections that occur in the State of Illinois. The data I use from them is a summary of all of the vote totals for every candidate running in the State of Illinois in the 2018 general election.
 
+### Illinois Sunshine
 
-```{r importing the data, include=FALSE}
+Illinois Sunshine is a non-partisan government reform organization. I currently have two spreadsheets from them regarding the campaign expenditures of the candidate at the top of each major party's ticket in the 2019 General Election in Illinois (JB Pritzker on the Democratic side and Bruce Rauner on the Republican side). 
 
-# Uploading my data for the democratic nominne fundraising. There are a bunch of
-# columns in the front that aren't going to be useful for my analysis, so I
-# subtract them out.
+### Progress
 
-dem_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Expenditures_JB_for_Governor_2020-02-29.csv", 
-                                 na = c("undefined", NA)) %>%
-                clean_names() %>%
-                select(-id, 
-                       -committee_id, 
-                       -filed_doc_id, 
-                       -etrans_id, 
-                       -candidate_name, 
-                       -office)
-            
-# Uploading my data for the republican nominne fundraising. There are a bunch of
-# columns in the front that aren't going to be useful for my analysis, so I
-# subtract them out.
-
-rep_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Receipts_Citizens_for_Rauner,_Inc_2020-02-29.csv", 
-                                 na = c("undefined", NA)) %>%
-                clean_names() %>%
-                select(-id, 
-                       -committee_id, 
-                       -filed_doc_id, 
-                       -etrans_id)
-
-# Uploading the data for the 2018 results. Deleting a single column that is full
-# of a bunch of NAs and it cluttering it up.
-
-results_2018 <- read_csv("GE2018Tot_637185248053240880.csv", 
-                                 na = c("undefined", NA)) %>%
-                clean_names() %>%
-                select(-can_affil_commit)
-
-```
+Currenty, each sheet is in a workable processed format in my "gather" RMD file. I am still working to determine which types of expenditures I want to examine (and hence why I have not joined my data yet) but am currently leaning towards an analysis of how different types of expenditures correlate to vote totals in different regions. I have scheduled office hours with Preceptor to discuss this more. At the moment, joining Republican vote totals to Republican expenditures and Democrat vote totals to Democrat expenditures is a solid possibility. 

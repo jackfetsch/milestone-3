@@ -23,6 +23,8 @@ library(rvest)
 # columns in the front that aren't going to be useful for my analysis, so I
 # subtract them out.
 
+# SOURCE: Illinois Sunshine Campaign Expenditure Data
+
 dem_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Expenditures_JB_for_Governor_2020-02-29.csv", 
                                  na = c("undefined", NA)) %>%
                 clean_names() %>%
@@ -37,6 +39,8 @@ dem_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Expenditures_JB_fo
 # columns in the front that aren't going to be useful for my analysis, so I
 # subtract them out.
 
+# SOURCE: Illinois Sunshine Campaign Expenditure Data
+
 rep_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Receipts_Citizens_for_Rauner,_Inc_2020-02-29.csv", 
                                  na = c("undefined", NA)) %>%
                 clean_names() %>%
@@ -47,6 +51,8 @@ rep_nominee_spending <- read_csv("Illinois_Sunshine_Committee_Receipts_Citizens_
 
 # Uploading the data for the 2018 results. Deleting a single column that is full
 # of a bunch of NAs and it cluttering it up.
+
+# SOURCE: Illinois Board of Elections Result Data
 
 results_2018 <- read_csv("GE2018Tot_637185248053240880.csv", 
                                  na = c("undefined", NA)) %>%

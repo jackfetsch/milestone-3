@@ -1,0 +1,8 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+[Link](https://github.com/jackfetsch/milestone-3) to My Repo.

@@ -1,11 +1,9 @@
 ---
-title: "About"
+title: "Gather"
 author: "Jack Fetsch"
 date: "2/28/2020"
 output: html_document
 ---
-
-[Link](https://github.com/jackfetsch/milestone-3) to My Repo.
 
 ```{r setup, include=FALSE}
 
